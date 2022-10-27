@@ -19,8 +19,15 @@ def is_remove_candidate(directory, date_modified, delta_time):
     return candidate_list
 
 
-# def remove_directory():
-#     pass
+def remove_directory(remove_list):
+    for directory in range(len(remove_list)):
+        removed_directory = candidate_list[directory]
+        print(f'{removed_directory}Directory has been deleted')
+
+        # os.chdir(drive)
+        # shutil.rmtree('testFolder')
+        # print(file_list)
+        # print('Directory has been deleted')
 
 
 def main(root_directory, days):
@@ -28,8 +35,9 @@ def main(root_directory, days):
         directory = os.path.join(root_directory, path)
         if os.path.isdir(directory):
             delta_time, date_modified = get_modified_date(directory, days)
-            is_remove_candidate(directory, delta_time, date_modified)
-    print(candidate_list)
+            remove_list = is_remove_candidate(directory, delta_time, date_modified)
+            remove_directory(remove_list)
+    # print(candidate_list)
 
 
 main('/Users/hossein/Documents/', number_of_day)
