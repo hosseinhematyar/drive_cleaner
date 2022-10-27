@@ -13,12 +13,12 @@ def get_modified_date(path):
 
 
 def remove_directory(directory, dry_pass=True):
-    if dry_pass:
-        try:
+    try:
+        if not dry_pass:
             shutil.rmtree(directory)
-            print(f'{directory},--> Directory has been deleted')
-        except:
-            print("There is no directory to delete")
+        print(f'{directory},--> Directory has been deleted')
+    except:
+        print("There is no directory to delete")
 
 
 def main(root_directory, days):
