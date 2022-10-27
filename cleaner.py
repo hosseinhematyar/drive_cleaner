@@ -1,4 +1,5 @@
 import os
+import shutil
 from datetime import date, timedelta
 
 number_of_day = 5
@@ -11,9 +12,13 @@ def get_modified_date(path):
     return date_modified
 
 
-def remove_directory(directory):
-    # shutil.rmtree(directory)
-    print(f'{directory},--> Directory has been deleted')
+def remove_directory(directory, dry_pass=True):
+    if dry_pass:
+        try:
+            shutil.rmtree(directory)
+            print(f'{directory},--> Directory has been deleted')
+        except:
+            print("There is no directory to delete")
 
 
 def main(root_directory, days):
@@ -23,11 +28,11 @@ def main(root_directory, days):
         if os.path.isdir(directory):
             delta_time = date.today() - timedelta(days=days)
             date_modified = get_modified_date(directory)
-            if delta_time < date_modified:
+            if delta_time > date_modified:
                 candidate_list.append(directory)
 
     for directory in candidate_list:
-        remove_directory(directory)
+        remove_directory(directory, dry_pass=False)
 
 
 main('/Users/hossein/Downloads/', number_of_day)
