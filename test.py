@@ -1,13 +1,6 @@
-from pathlib import Path
+mylist = []
 
-root_folder = '/Users/hossein/Desktop/drive/'
+mylist.append('test')
+mylist.append('test1')
 
-
-def listdirs(root_folder):
-    for path in Path(root_folder).iterdir():
-        if path.is_dir():
-            print(path)
-            listdirs(path)
-
-
-listdirs(root_folder)
+print(mylist)
