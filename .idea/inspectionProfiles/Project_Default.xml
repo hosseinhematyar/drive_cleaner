@@ -1,0 +1,22 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="PySide2.QtWidgets.clicked.connect" />
+          <option value="MayaNodeCreator.MNC_Modules.core.*" />
+          <option value="MayaNodeCreator.core.cmds" />
+          <option value="NodeCreator.core.cmds" />
+          <option value="Maya.Test.cmds" />
+          <option value="NodeCreator.main.maya" />
+          <option value="NodeCreator.main.app" />
+          <option value="main.app" />
+          <option value="main.maya" />
+          <option value="core.maya" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
