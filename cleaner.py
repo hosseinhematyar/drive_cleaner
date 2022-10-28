@@ -16,12 +16,10 @@ def remove_directory(directory, dry_pass=True):
     try:
         if not dry_pass:
             shutil.rmtree(directory)
-            print(f'{directory},--> Directory has been deleted')
-        else:
-            print("ERROR --> This code can not run this time")
+        print(f'{directory},--> Directory has been deleted')
 
-    except:
-        print("ERROR --> There is no directory to delete")
+    except Exception as err:
+        print(err)
 
 
 def main(root_directory, days):
@@ -35,7 +33,7 @@ def main(root_directory, days):
                 candidate_list.append(directory)
 
     for directory in candidate_list:
-        remove_directory(directory, dry_pass=True)
+        remove_directory(directory)
 
 
-main('/Users/hossein/Personal On Mac/Programming/pythonlearn/PySide2/', number_of_day)
+main('/Users/hossein/.Trash/', number_of_day)
