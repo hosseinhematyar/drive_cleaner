@@ -2,7 +2,7 @@ import os
 import shutil
 from datetime import date, timedelta
 
-number_of_day = 5
+number_of_day = 0
 today = date.today()
 
 
@@ -16,9 +16,12 @@ def remove_directory(directory, dry_pass=True):
     try:
         if not dry_pass:
             shutil.rmtree(directory)
-        print(f'{directory},--> Directory has been deleted')
+            print(f'{directory},--> Directory has been deleted')
+        else:
+            print("ERROR --> This code can not run this time")
+
     except:
-        print("There is no directory to delete")
+        print("ERROR --> There is no directory to delete")
 
 
 def main(root_directory, days):
@@ -32,7 +35,7 @@ def main(root_directory, days):
                 candidate_list.append(directory)
 
     for directory in candidate_list:
-        remove_directory(directory, dry_pass=False)
+        remove_directory(directory, dry_pass=True)
 
 
-main('/Users/hossein/Downloads/', number_of_day)
+main('/Users/hossein/Personal On Mac/Programming/pythonlearn/PySide2/', number_of_day)
